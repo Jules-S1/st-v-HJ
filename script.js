@@ -26,15 +26,19 @@ function bougerLeBouton() {
     boutonFuyant.style.top = nouveauY + 'px';
 }
 
-// 1. On sélectionne le bouton fixe et l'image
+// 1. On sélectionne le bouton et les DEUX images
 const boutonFixe = document.getElementById('boutonFixe');
-const imageSurprise = document.getElementById('monImageSurprise');
+const imageG = document.getElementById('imgGauche');
+const imageD = document.getElementById('imgDroite');
 
-// 2. On écoute le clic sur le bouton fixe
+// 2. On écoute le clic
 boutonFixe.addEventListener('click', function() {
     
-    // Si l'image est cachée, on la montre
-    if (imageSurprise.style.display === 'none') {
-        imageSurprise.style.display = 'block';
-    }
+    // On vérifie l'état de la première image (si l'une est cachée, l'autre l'est aussi)
+    if (imageG.style.display === 'block') {
+        // SI ELLES SONT VISIBLES -> ON LES CACHE
+        imageG.style.display = 'none';
+        imageD.style.display = 'none';
+        boutonFixe.innerText = "Montrer les surprises 🎁";
+    } 
 });
