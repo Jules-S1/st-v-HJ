@@ -45,9 +45,9 @@ button {
 /* --- Style pour les images dans les coins --- */
 
 #imgGauche {
-    left: 10px;       /* Collé à gauche */
+    left: 20px;       /* Collé à gauche */
 }
 
 #imgDroite {
-    right: 10px;      /* Collé à droite */
+    right: 20px;      /* Collé à droite */
 }
