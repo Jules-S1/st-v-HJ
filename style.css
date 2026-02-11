@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Fond dégradé */
+    background: linear-gradient(135deg, #64ea66 0%, #4aa591 100%); /* Fond dégradé */
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -31,12 +31,12 @@ button {
 }
 
 #boutonFixe {
-    background-color: white;
-    color: #764ba2;
+    background-color: rgb(18, 145, 6);
+    color: #000000;
 }
 
 #boutonFuyant {
-    background-color: #ff6b6b;
-    color: white;
+    background-color: #8d1414;
+    color: rgb(0, 0, 0);
     position: absolute; /* Indispensable pour bouger */
 }
