@@ -44,6 +44,14 @@ button {
 
 /* --- Style pour les images dans les coins --- */
 
+.image-coin {
+    position: fixed;  /* La "super-glu" : ça colle l'image à l'écran */
+    bottom: 20px;     /* À 20 pixels du bas de l'écran */
+    width: 150px;     /* Taille de l'image */
+    display: none;    /* Cachées par défaut */
+    z-index: 100;     /* S'assure qu'elles sont PAR DESSUS tout le reste */
+}
+
 #imgGauche {
     left: 20px;       /* Collé à gauche */
 }
