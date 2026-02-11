@@ -7,15 +7,26 @@ boutonFuyant.addEventListener('click', function() {
 });
 
 function bougerLeBouton() {
-    // Calculer la largeur et hauteur de la fenêtre disponible
+    // 1. On récupère les dimensions de l'écran
     const largeurFenetre = window.innerWidth;
     const hauteurFenetre = window.innerHeight;
 
-    // Générer une position aléatoire (on garde une marge pour qu'il ne sorte pas trop)
-    const nouveauX = Math.random() * (largeurFenetre - 200);
-    const nouveauY = Math.random() * (hauteurFenetre - 100);
+    // 2. On mesure la taille réelle du bouton (largeur et hauteur)
+    // "offsetWidth" nous donne la largeur exacte du bouton avec son texte
+    const largeurBouton = boutonFuyant.offsetWidth;
+    const hauteurBouton = boutonFuyant.offsetHeight;
 
-    // Appliquer la nouvelle position
+    // 3. On calcule la zone autorisée (Écran - Bouton - Marge de 20px)
+    // On enlève la taille du bouton pour qu'il ne dépasse pas
+    const maxX = largeurFenetre - largeurBouton - 20;
+    const maxY = hauteurFenetre - hauteurBouton - 20;
+
+    // 4. On génère la position aléatoire
+    // Math.max(0, ...) est une sécurité : si l'écran est minuscule, ça reste à 0
+    const nouveauX = Math.random() * Math.max(0, maxX);
+    const nouveauY = Math.random() * Math.max(0, maxY);
+
+    // 5. On applique
     boutonFuyant.style.left = nouveauX + 'px';
     boutonFuyant.style.top = nouveauY + 'px';
 }

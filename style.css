@@ -8,6 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
+    overflow: hidden;
 }
 
 .container {
@@ -43,17 +44,10 @@ button {
 
 /* --- Style pour les images dans les coins --- */
 
-.image-coin {
-    position: fixed;  /* La "super-glu" : ça colle l'image à l'écran */
-    bottom: 20px;     /* À 20 pixels du bas de l'écran */
-    width: 150px;     /* Taille de l'image */
-    z-index: 100;     /* S'assure qu'elles sont PAR DESSUS tout le reste */
-}
-
 #imgGauche {
-    left: 20px;       /* Collé à gauche */
+    left: 10px;       /* Collé à gauche */
 }
 
 #imgDroite {
-    right: 20px;      /* Collé à droite */
+    right: 10px;      /* Collé à droite */
 }
