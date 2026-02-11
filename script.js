@@ -25,3 +25,15 @@ function bougerLeBouton() {
     boutonFuyant.style.left = nouveauX + 'px';
     boutonFuyant.style.top = nouveauY + 'px';
 }
+
+// 1. On sélectionne le bouton fixe et l'image
+const boutonFixe = document.getElementById('boutonFixe');
+const imageSurprise = document.getElementById('monImageSurprise');
+
+// 2. On écoute le clic sur le bouton fixe
+boutonFixe.addEventListener('click', function() {
+    
+    // Si l'image est cachée, on la montre
+    if (imageSurprise.style.display === 'none') {
+        imageSurprise.style.display = 'block';
+    }
