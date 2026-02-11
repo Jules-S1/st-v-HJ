@@ -37,7 +37,7 @@ const boutonFixe = document.getElementById('boutonFixe');
 // On écoute le clic
 boutonFixe.addEventListener('click', function() {
     // On change le texte
-    boutonFixe.innerText = "Je le savais ! ❤️ (Tu ne peux pas m'échapper !)";
+    boutonFixe.innerText = "Tu fais de moi un homme heureux ;)";
     
     // On change la couleur pour faire plus festif
     //boutonFixe.style.backgroundColor = "#ff6b6b";
