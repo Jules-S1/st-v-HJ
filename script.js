@@ -1,13 +1,7 @@
-// On sélectionne le bouton
+// --- PARTIE 1 : BOUTON QUI BOUGE (Uniquement au clic) ---
 const boutonFuyant = document.getElementById('boutonFuyant');
 
-// On écoute l'événement "survol de la souris" (mouseenter)
-// C'est plus dur que le clic : le bouton bouge dès qu'on l'approche !
-boutonFuyant.addEventListener('mouseenter', function() {
-    bougerLeBouton();
-});
-
-// On gère aussi le clic sur écran tactile (pour mobile)
+// J'ai supprimé le "mouseenter", il ne reste que le clic
 boutonFuyant.addEventListener('click', function() {
     bougerLeBouton();
 });
@@ -17,8 +11,8 @@ function bougerLeBouton() {
     const largeurFenetre = window.innerWidth;
     const hauteurFenetre = window.innerHeight;
 
-    // Générer une position aléatoire
-    const nouveauX = Math.random() * (largeurFenetre - 150);
+    // Générer une position aléatoire (on garde une marge pour qu'il ne sorte pas trop)
+    const nouveauX = Math.random() * (largeurFenetre - 200);
     const nouveauY = Math.random() * (hauteurFenetre - 100);
 
     // Appliquer la nouvelle position
@@ -26,19 +20,15 @@ function bougerLeBouton() {
     boutonFuyant.style.top = nouveauY + 'px';
 }
 
-// 1. On sélectionne le bouton et les DEUX images
+// --- PARTIE 2 : BOUTON FIXE (Change juste le texte) ---
 const boutonFixe = document.getElementById('boutonFixe');
-const imageG = document.getElementById('imgGauche');
-const imageD = document.getElementById('imgDroite');
 
-// 2. On écoute le clic
+// On écoute le clic
 boutonFixe.addEventListener('click', function() {
+    // On change le texte
+    boutonFixe.innerText = "Je le savais ! ❤️ (Tu ne peux pas m'échapper !)";
     
-    // On vérifie l'état de la première image (si l'une est cachée, l'autre l'est aussi)
-    if (imageG.style.display === 'block') {
-        // SI ELLES SONT VISIBLES -> ON LES CACHE
-        imageG.style.display = 'none';
-        imageD.style.display = 'none';
-        boutonFixe.innerText = "Montrer les surprises 🎁";
-    } 
+    // On change la couleur pour faire plus festif
+    //boutonFixe.style.backgroundColor = "#ff6b6b";
+    //boutonFixe.style.color = "white";
 });
