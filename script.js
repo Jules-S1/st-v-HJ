@@ -37,3 +37,4 @@ boutonFixe.addEventListener('click', function() {
     if (imageSurprise.style.display === 'none') {
         imageSurprise.style.display = 'block';
     }
+});
