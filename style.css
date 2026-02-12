@@ -75,7 +75,11 @@ button {
     width: 150px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    bottom:-50px;
+    top: 40px;
+    bottom: auto;    /* Annule le top précédent */
+    transform: none; 
+    width: 150px;
+    z-index: 12; 
 }
 .left { left: 20px; }
 .right { right: 20px; }
