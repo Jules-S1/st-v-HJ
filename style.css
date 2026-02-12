@@ -1,61 +1,109 @@
-body {
+/* Reset de base */
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #64ea66 0%, #4aa591 100%); /* Fond dégradé */
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    overflow: hidden;
+    box-sizing: border-box;
 }
 
-.container {
+body, html {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden; /* Empêche le scroll si le bouton bouge aux bords */
+}
+
+/* Modification de la bannière pour qu'elle flotte par-dessus */
+.top-banner {
+    position: absolute; /* Elle ne "pousse" plus le contenu vers le bas */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Assure qu'elle reste au-dessus du fond */
     text-align: center;
-    background: rgba(255, 255, 255, 0.1); /* Fond semi-transparent */
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(4px); /* Effet de flou derrière */
-    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.top-banner img {
+    width: 100%; /* L'image prend toute la largeur */
+    max-height: 150px; /* Tu peux ajuster la hauteur max ici */
+    object-fit: cover; /* Évite de déformer l'image */
+    display: block;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+/* Ton fond d'écran (déjà bien configuré pour prendre 100vh) */
+.hero-section {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                      url('https://apod.nasa.gov/apod/image/2210/GalaxyFlower_Strand_960.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.button-group {
+    margin-top: 20px;
 }
 
 button {
-    padding: 15px 25px;
-    margin: 10px;
-    border: none;
-    border-radius: 50px;
-    font-weight: bold;
+    padding: 12px 24px;
+    font-size: 16px;
     cursor: pointer;
+    border: none;
+    border-radius: 5px;
     transition: transform 0.2s;
+    margin: 10px;
 }
 
-#boutonFixe {
-    background-color: rgb(18, 145, 6);
-    color: #000000;
+#btn-surprise { background-color: #3498db; color: white; }
+#btn-escape { 
+    background-color: #e74c3c; 
+    color: white; 
+    position: absolute; /* Crucial pour le déplacement */
+    z-index:11;
 }
 
-#boutonFuyant {
-    background-color: #8d1414;
-    color: rgb(0, 0, 0);
-    position: absolute; /* Indispensable pour bouger */
+/* Style des images qui apparaîtront */
+.side-img {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 150px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+.left { left: 20px; }
+.right { right: 20px; }
+
+#message-container {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
-/* --- Style pour les images dans les coins --- */
-
-.image-coin {
-    position: fixed;  /* La "super-glu" : ça colle l'image à l'écran */
-    bottom: 20px;     /* À 20 pixels du bas de l'écran */
-    width: 150px;     /* Taille de l'image */
-    display: none;    /* Cachées par défaut */
-    z-index: 100;     /* S'assure qu'elles sont PAR DESSUS tout le reste */
+/* Conteneur pour les pétales (invisible au clic) */
+.petal {
+    position: fixed;
+    top: -50px; /* Part du dessus de l'écran */
+    font-size: 25px;
+    user-select: none;
+    pointer-events: none; /* Pour ne pas bloquer les clics sur les boutons */
+    z-index: 9999; /* Par-dessus tout le reste */
+    animation-name: fall;
+    animation-timing-function: linear;
 }
 
-#imgGauche {
-    left: 20px;       /* Collé à gauche */
-}
-
-#imgDroite {
-    right: 20px;      /* Collé à droite */
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg) translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(720deg) translateX(50px);
+        opacity: 0;
+    }
 }
