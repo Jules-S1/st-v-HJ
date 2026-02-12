@@ -3,21 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surprise Petite Grenouille</title>
+    <title>Petite Grenouille</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <h1>Bonne Saint-Valentin mon Coeur <3 </h1>
-        <p>Veux-tu bien être ma valentine aujourd'hui ? (essaye de dire non pour voir &#x1F440;)</p>
-        
-        <div class="zone-jeu">
-            <button id="boutonFixe">Oui, vue que tu m'aimes de tout ton coeur</button>
-            <button id="boutonFuyant">NON, t'as pas envie d'être avec moi, tu ne m'aimes pas</button>
-            <img id="imgGauche" src="https://tse1.mm.bing.net/th/id/OIP.M7HQ6KiVXD-TT-bDvGAxvAHaHa?pid=Api" class="image-coin">
-            <img id="imgDroite" src="https://freepngimg.com/thumb/rose/27875-2-rose-petals-file.png" class="image-coin">
+    <div class="top-banner">
+        <img src="https://dbdzm869oupei.cloudfront.net/img/sticker/preview/100931.png" alt="Bandeau supérieur">
+    </div>
+
+    <div class="hero-section">
+        <h1 id="main-title">Coucou mon Coeur <3,
+        Bonne saint-valentin !</h1>
+        <p id="description">Veux-tu être ma valentine ? (essaye de dire non pour voir 👀)</p>
+
+        <div class="button-group">
+            <button id="btn-surprise">Oui bien sûr, je ne rêve que de ça !!</button>
+            <button id="btn-escape">NON, je ne t'aime pas pfff</button>
         </div>
+
+        <div id="message-container"></div>
+        <div id="image-container"></div>
     </div>
 
     <script src="script.js"></script>
